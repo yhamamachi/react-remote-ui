@@ -1,0 +1,85 @@
+html,
+body {
+  background-color: #777;
+  color: #ccc;
+  padding: 0px;
+  margin: 0px;
+  position: fixed;
+  left: 0px;
+  right: 0px;
+  top: 0px;
+  bottom: 0px;
+}
+
+body- > div {
+  position: fixed;
+  left: 0px;
+  right: 0px;
+  top: 0px;
+  bottom: 0px;
+}
+
+p {
+  padding: 0;
+  margin: 0;
+}
+
+#root {
+  background-color: #333;
+  color: #ccc;
+  padding: 0;
+  margin: 0;
+}
+
+.App {
+  font-family: sans-serif;
+  text-align: center;
+  background-color: #5e5f06;
+  color: yellow;
+  padding: 0;
+  margin: 0;
+}
+
+.flex {
+  display: flex;
+}
+
+.SideMenu {
+  font-family: sans-serif;
+  text-align: center;
+  background-color: #83e783;
+  color: red;
+  padding: 0;
+  margin: 0;
+  /* min-width: 300px;  move to SideMenu.js*/
+}
+
+.MainWindow {
+  font-family: sans-serif;
+  text-align: center;
+  background-color: #b85d5d;
+  color: blue;
+  height: 99vh;
+  width: 99%;
+}
+
+/* PaneIcon style */
+.PaneIconOuter {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 60px;
+  background: #333;
+  font-size: 30px;
+  padding: 5px;
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
+.PaneIconInner {
+  width: 54px;
+  height: 20px;
+  cursor: move;
+  font-size: 14px;
+  color: #fff;
+}
