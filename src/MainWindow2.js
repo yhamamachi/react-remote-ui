@@ -86,7 +86,7 @@ export function MainWindow2() {
   const hostname = window.location.hostname;
   const [nodeList, setNodeList] = useState([
     DummyWindow2("http://" + hostname + ":7681"),
-    DummyWindow3("http://" + hostname + ":3030"),
+    DummyWindow2("http://" + hostname + ":3030"),
     DummyWindow2("http://" + hostname + ":5900"),
     DummyWindow("App1"),
     DummyWindow("App2"),
