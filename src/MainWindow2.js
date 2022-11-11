@@ -43,6 +43,16 @@ export const DummyWindow2 = (URL: string) => {
   );
 };
 
+export const DummyWindow3 = (URL: string) => {
+  return (
+    <div style={styles.pane}>
+      <iframe src={URL} width="100%" height="100%">
+        <p>Note: It seems that your browser doesn't support Object tag.</p>
+      </iframe>
+    </div>
+  );
+};
+
 function PaneIcon({ name }: { name: number | string }) {
   const getLeaf = useGetLeaf();
   const move = useMovePane();
@@ -76,7 +86,7 @@ export function MainWindow2() {
   const hostname = window.location.hostname;
   const [nodeList, setNodeList] = useState([
     DummyWindow2("http://" + hostname + ":7681"),
-    DummyWindow2("http://" + hostname + ":3030"),
+    DummyWindow3("http://" + hostname + ":3030"),
     DummyWindow2("http://" + hostname + ":5900"),
     DummyWindow("App1"),
     DummyWindow("App2"),
