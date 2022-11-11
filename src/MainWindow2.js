@@ -75,11 +75,11 @@ function PaneIcon({ name }: { name: number | string }) {
 export function MainWindow2() {
   const hostname = window.location.hostname;
   const [nodeList, setNodeList] = useState([
-    DummyWindow("Serial"),
-    DummyWindow("Wave"),
-    DummyWindow("Camera"),
-    DummyWindow("App1"),
+    DummyWindow2("http://" + hostname + ":7681"),
+    DummyWindow2("http://" + hostname + ":3030"),
     DummyWindow2("http://" + hostname + ":5900"),
+    DummyWindow("App1"),
+    DummyWindow("App2"),
     <SampleWindow />
   ]);
   return (
