@@ -19,11 +19,6 @@ export const Debug = () => {
   );
 };
 
-const func1 = (page) => {
-  document.form1.action = `${page}.html`;
-  document.form1.submit();
-  console.log(page);
-};
 function get_req(url) {
   fetch(url, {
     method: "GET"
