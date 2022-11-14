@@ -15,11 +15,14 @@ import "./styles.css";
 import { Demo1 } from "./Demo/Demo1.js";
 import { Demo2 } from "./Demo/Demo2.js";
 import { Demo3 } from "./Demo/Demo3.js";
+import { Debug } from "./Debug/Debug.js";
 
 //let menu_num = 0;
 export function SideMenu(props) {
   const Demos = ["Demo1", "Demo2", "Demo3"];
   const Benchmarks = ["Benchmark1", "Benchmark2"];
+  const Debugs = ["Debug"];
+
   const [menu_name, setMenuName] = useState(0);
   const [isVisible, setIsVisible] = useState(1);
   const toggleVisible = () => setIsVisible(1 - isVisible);
@@ -50,6 +53,9 @@ export function SideMenu(props) {
       break;
     case "Demo3":
       item = Demo3();
+      break;
+    case "Debug":
+      item = Debug();
       break;
     default:
       // item = "Please select Demo/Benchmark";
@@ -84,6 +90,7 @@ export function SideMenu(props) {
         <Menu menuButton={<MenuButton>Demo/Benchmark Select</MenuButton>}>
           <MakeSubMenu MenuListName="Demo" MenuList={Demos} />
           <MakeSubMenu MenuListName="Bechmark" MenuList={Benchmarks} />
+          <MakeSubMenu MenuListName="Debug" MenuList={Debugs} />
         </Menu>
 
         <div>{item}</div>
