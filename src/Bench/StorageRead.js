@@ -56,7 +56,7 @@ export const StorageRead = () => {
         </p>
         <input
           type="text"
-          name="ifrag"
+          name="iflag"
           defaultValue="direct"
           style={{ display: "none" }}
         />
