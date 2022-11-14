@@ -2,12 +2,11 @@ export const Debug = () => {
   return (
     <>
       Debug
-      <form id="poweron_form">
+      <p>
         <button onClick={powerOn}>Power ON</button>
-      </form>
-      <form id="poweron_of">
         <button onClick={powerOff}>Power OFF</button>
-      </form>
+      </p>
+      <br />
       <form id="test_form">
         <input type="text" name="test_data" />
       </form>
@@ -22,11 +21,18 @@ const func1 = (page) => {
   document.form1.submit();
   console.log(page);
 };
+function get_req(url) {
+  fetch(url, {
+    method: "GET"
+  })
+    .then((response) => response.text())
+    .then((text) => {});
+}
 
 const powerControl = (state) => {
   const hostname = window.location.hostname;
   const url = "http://" + hostname + ":8000/POWER?a=" + state;
-  fetch(url);
+  get_req(url);
 };
 
 const powerOn = () => {
@@ -44,7 +50,7 @@ function displayFormData() {
   const query = convertFormDataToURL(formElmKai);
   const url = "http://" + hostname + ":8000/command?" + query;
   const displayElm = document.getElementById("display");
-  fetch(url);
+  get_req(url);
   displayElm.innerHTML = url;
 }
 
