@@ -9,8 +9,11 @@ export const Debug = () => {
       <br />
       <form id="test_form">
         <input type="text" name="test_data" />
+        <input type="text" name="dummy" style={{ display: "none" }} />
+        <button type="button" onClick={displayFormData}>
+          Send Command
+        </button>
       </form>
-      <button onClick={displayFormData}>Send Command</button>
       <p id="display"></p>
     </>
   );
