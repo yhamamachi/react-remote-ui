@@ -16,11 +16,12 @@ import { Demo1 } from "./Demo/Demo1.js";
 import { Demo2 } from "./Demo/Demo2.js";
 import { Demo3 } from "./Demo/Demo3.js";
 import { Debug } from "./Debug/Debug.js";
+import { StorageRead } from "./Bench/StorageRead.js";
 
 //let menu_num = 0;
 export function SideMenu(props) {
   const Demos = ["Demo1", "Demo2", "Demo3"];
-  const Benchmarks = ["Benchmark1", "Benchmark2"];
+  const Benchmarks = ["StorageRead"];
   const Debugs = ["Debug"];
 
   const [menu_name, setMenuName] = useState(0);
@@ -56,6 +57,9 @@ export function SideMenu(props) {
       break;
     case "Debug":
       item = Debug();
+      break;
+    case "StorageRead":
+      item = StorageRead();
       break;
     default:
       // item = "Please select Demo/Benchmark";
