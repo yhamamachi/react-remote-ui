@@ -57,7 +57,7 @@ function displayFormData() {
 const convertFormDataToURL = (formData) => {
   const tmp_array = formData.split(" ");
   let ret_str = "";
-  for (i = 0; i < tmp_array.length; i++) {
+  for (let i = 0; i < tmp_array.length; i++) {
     console.log(tmp_array[i]);
     ret_str += i + "=" + tmp_array[i] + "&";
   }
