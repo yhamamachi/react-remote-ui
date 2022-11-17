@@ -18,12 +18,13 @@ import {
 } from "react-tile-pane";
 import { SampleWindow } from "./Window/SampleWindow";
 import { FullscreenWindow } from "./Window/FullscreenWindow";
+import { ClusterWindow } from "./Window/ClusterWindow";
 import { styles, theme } from "./theme";
 
 /****************************************************
  * Config
  *****************************************************/
-const title = ["Serial", "Wave", "Camera", "App1", "App2", "Sample"];
+const title = ["Serial", "Wave", "Camera", "Cluster", "App1", "App2", "Sample"];
 export const rootPane: TileBranchSubstance = {
   children: [{ children: title[0] }, { children: title[1] }]
 };
@@ -70,6 +71,7 @@ export function MainWindow2() {
     FullscreenWindow("http://" + hostname + ":7681"),
     FullscreenWindow("http://" + hostname + ":3030"),
     FullscreenWindow("http://" + hostname + ":5900"),
+    <ClusterWindow />,
     DummyWindow("App1"),
     DummyWindow("App2"),
     <SampleWindow />
