@@ -42,7 +42,7 @@ function displayFormData() {
   const query = convertFormDataToURL(formElmKai);
   const url = "http://" + hostname + ":8000/command?" + query;
   const displayElm = document.getElementById("display");
-  utilsget_req(url);
+  utils.get_req(url);
   displayElm.innerHTML = url;
 }
 
