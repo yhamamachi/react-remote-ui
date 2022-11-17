@@ -17,6 +17,7 @@ import {
   // TabsBarConfig
 } from "react-tile-pane";
 import { SampleWindow } from "./Window/SampleWindow";
+import { FullscreenWindow } from "./Window/FullscreenWindow";
 import { styles, theme } from "./theme";
 
 /****************************************************
@@ -32,25 +33,6 @@ export const rootPane: TileBranchSubstance = {
  *****************************************************/
 export const DummyWindow = (title: string) => {
   return <div style={styles.pane}>Hello, {title} window!</div>;
-};
-export const DummyWindow2 = (URL: string) => {
-  return (
-    <div style={styles.pane}>
-      <object type="text/html" data={URL} width="100%" height="100%">
-        <p>Note: It seems that your browser doesn't support Object tag.</p>
-      </object>
-    </div>
-  );
-};
-
-export const DummyWindow3 = (URL: string) => {
-  return (
-    <div style={styles.pane}>
-      <iframe src={URL} width="100%" height="100%">
-        <p>Note: It seems that your browser doesn't support Object tag.</p>
-      </iframe>
-    </div>
-  );
 };
 
 function PaneIcon({ name }: { name: number | string }) {
@@ -85,9 +67,9 @@ function PaneIcon({ name }: { name: number | string }) {
 export function MainWindow2() {
   const hostname = window.location.hostname;
   const [nodeList, setNodeList] = useState([
-    DummyWindow2("http://" + hostname + ":7681"),
-    DummyWindow2("http://" + hostname + ":3030"),
-    DummyWindow2("http://" + hostname + ":5900"),
+    FullscreenWindow("http://" + hostname + ":7681"),
+    FullscreenWindow("http://" + hostname + ":3030"),
+    FullscreenWindow("http://" + hostname + ":5900"),
     DummyWindow("App1"),
     DummyWindow("App2"),
     <SampleWindow />

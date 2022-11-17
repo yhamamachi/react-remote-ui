@@ -2,7 +2,6 @@ import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 import App from "./App";
 import { SideMenu } from "./SideMenu";
-import { MainWindow } from "./MainWindow";
 import { MainWindow2 } from "./MainWindow2";
 
 const rootElement = document.getElementById("root");
