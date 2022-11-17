@@ -1,3 +1,5 @@
+import * as utils from "../utils";
+
 export const Debug = () => {
   return (
     <>
@@ -19,18 +21,10 @@ export const Debug = () => {
   );
 };
 
-function get_req(url) {
-  fetch(url, {
-    method: "GET"
-  })
-    .then((response) => response.text())
-    .then((text) => {});
-}
-
 const powerControl = (state) => {
   const hostname = window.location.hostname;
   const url = "http://" + hostname + ":8000/POWER?a=" + state;
-  get_req(url);
+  utils.get_req(url);
 };
 
 const powerOn = () => {
@@ -48,7 +42,7 @@ function displayFormData() {
   const query = convertFormDataToURL(formElmKai);
   const url = "http://" + hostname + ":8000/command?" + query;
   const displayElm = document.getElementById("display");
-  get_req(url);
+  utilsget_req(url);
   displayElm.innerHTML = url;
 }
 

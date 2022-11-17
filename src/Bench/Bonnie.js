@@ -1,3 +1,5 @@
+import * as utils from "../utils";
+
 export const Bonnie = () => {
   return (
     <>
@@ -29,13 +31,6 @@ export const Bonnie = () => {
     </>
   );
 };
-function get_req(url) {
-  fetch(url, {
-    method: "GET"
-  })
-    .then((response) => response.text())
-    .then((text) => {});
-}
 
 const RunBenchBonnie = () => {
   const hostname = window.location.hostname;
@@ -43,7 +38,7 @@ const RunBenchBonnie = () => {
   const query = convertFormElementsToURL(_form_elements);
   console.log(query);
   const url = "http://" + hostname + ":8000/command?" + query;
-  get_req(url);
+  utils.get_req(url);
 };
 
 const convertFormElementsToURL = (formElements) => {
