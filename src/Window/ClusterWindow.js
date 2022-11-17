@@ -2,8 +2,7 @@ import * as React from "react";
 import "react-tile-pane/theme/left-tab/styles.css";
 import { styles } from "../theme";
 
-//const hostname = window.location.hostname;
-const hostname = "localhost";
+const hostname = window.location.hostname;
 let cluster_scale = 0.5;
 
 export const ClusterWindow = () => {
