@@ -3,7 +3,7 @@ export const StorageRead = () => {
     <>
       StorageRead by dd command
       <br />
-      <form id="test_form">
+      <form id="bench_dd_read_form">
         <input
           type="text"
           name="sudo"
@@ -83,7 +83,7 @@ function get_req(url) {
 
 const RunCommand = () => {
   const hostname = window.location.hostname;
-  const _form_elements = document.forms["test_form"].elements;
+  const _form_elements = document.forms["bench_dd_read_form"].elements;
   const query = convertFormElementsToURL(_form_elements);
   console.log(query);
   const url = "http://" + hostname + ":8000/command?" + query;

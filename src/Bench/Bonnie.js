@@ -3,7 +3,7 @@ export const Bonnie = () => {
     <>
       Bonnie++ benchmark
       <br />
-      <form id="test_form">
+      <form id="bench_bonnie_form">
         <input
           type="text"
           name="bonnie++"
@@ -37,7 +37,7 @@ function get_req(url) {
 
 const RunCommand = () => {
   const hostname = window.location.hostname;
-  const _form_elements = document.forms["test_form"].elements;
+  const _form_elements = document.forms["bench_bonnie_form"].elements;
   const query = convertFormElementsToURL(_form_elements);
   console.log(query);
   const url = "http://" + hostname + ":8000/command?" + query;
