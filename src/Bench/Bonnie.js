@@ -6,13 +6,15 @@ export const Bonnie = () => {
       <form id="bench_bonnie_form">
         <input
           type="text"
-          name="bonnie++"
-          defaultValue="bonnie++"
+          name="bonnie"
+          value="bonnie"
+          defaultValue="bonnie"
           style={{ display: "none" }}
         />
         <input
           type="text"
           name="-d"
+          value="~"
           defaultValue="~"
           style={{ display: "none" }}
         />

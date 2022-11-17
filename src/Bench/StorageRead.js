@@ -7,24 +7,28 @@ export const StorageRead = () => {
         <input
           type="text"
           name="sudo"
+          value="sudo"
           defaultValue="sudo"
           style={{ display: "none" }}
         />
         <input
           type="text"
           name="dd"
+          value="dd"
           defaultValue="dd"
           style={{ display: "none" }}
         />
         <input
           type="text"
           name="if"
+          value="/dev/mmcblk0"
           defaultValue="/dev/mmcblk0"
           style={{ display: "none" }}
         />
         <input
           type="text"
           name="of"
+          value="/dev/null"
           defaultValue="/dev/null"
           style={{ display: "none" }}
         />
@@ -57,12 +61,14 @@ export const StorageRead = () => {
         <input
           type="text"
           name="iflag"
+          value="direct"
           defaultValue="direct"
           style={{ display: "none" }}
         />
         <input
           type="text"
           name="_dummy"
+          value=""
           defaultValue=""
           style={{ display: "none" }}
         />
