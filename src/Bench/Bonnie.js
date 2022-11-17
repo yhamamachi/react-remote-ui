@@ -20,7 +20,7 @@ export const Bonnie = () => {
           -n
           <input type="text" name="-n" defaultValue="256:1024:1024:16" />
         </p>
-        <button type="button" onClick={RunCommand}>
+        <button type="button" onClick={RunBenchBonnie}>
           Run
         </button>
       </form>
@@ -35,7 +35,7 @@ function get_req(url) {
     .then((text) => {});
 }
 
-const RunCommand = () => {
+const RunBenchBonnie = () => {
   const hostname = window.location.hostname;
   const _form_elements = document.forms["bench_bonnie_form"].elements;
   const query = convertFormElementsToURL(_form_elements);

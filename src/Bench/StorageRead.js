@@ -66,7 +66,7 @@ export const StorageRead = () => {
           defaultValue=""
           style={{ display: "none" }}
         />
-        <button type="button" onClick={RunCommand}>
+        <button type="button" onClick={RunBenchDDRead}>
           Run
         </button>
       </form>
@@ -81,7 +81,7 @@ function get_req(url) {
     .then((text) => {});
 }
 
-const RunCommand = () => {
+const RunBenchDDRead = () => {
   const hostname = window.location.hostname;
   const _form_elements = document.forms["bench_dd_read_form"].elements;
   const query = convertFormElementsToURL(_form_elements);
