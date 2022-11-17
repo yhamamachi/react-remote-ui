@@ -20,5 +20,16 @@
     </noscript>
     <div id="root"></div>
     Hello,dummy.html
+    <p id="display"></p>
   </body>
 </html>
+
+<script>
+  const params = new Proxy(new URLSearchParams(window.location.search), {
+    get: (searchParams, prop) => searchParams.get(prop)
+  });
+  const val = params.edgeIP || "No input";
+  console.log();
+  const displayElm = document.getElementById("display");
+  displayElm.innerHTML = val;
+</script>
