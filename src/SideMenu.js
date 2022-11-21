@@ -97,7 +97,7 @@ export function SideMenu(props) {
         </p>
         <Menu menuButton={<MenuButton>Demo/Benchmark Select</MenuButton>}>
           <MakeSubMenu MenuListName="Demo" MenuList={Demos} />
-          <MakeSubMenu MenuListName="Bechmark" MenuList={Benchmarks} />
+          <MakeSubMenu MenuListName="Benchmark" MenuList={Benchmarks} />
           <MakeSubMenu MenuListName="Debug" MenuList={Debugs} />
         </Menu>
 
