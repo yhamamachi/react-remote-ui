@@ -36,25 +36,24 @@ export const StorageRead = () => {
         />
         <p>
           bs=
-          <input type="text" name="bs" defaultValue="" list="bsList" />
-          <datalist id="bsList">
-            <option value="512"></option>
-            <option value="1K"></option>
-            <option value="2K"></option>
-            <option value="4K"></option>
-            <option value="8K"></option>
-            <option value="16K"></option>
-            <option value="32K"></option>
-            <option value="64K"></option>
-            <option value="128K"></option>
-            <option value="256K"></option>
-            <option value="512K"></option>
-            <option value="1M"></option>
-            <option value="2M"></option>
-            <option value="4M"></option>
-            <option value="8M"></option>
-            <option value="16M"></option>
-          </datalist>
+          <select name="bs" size="1">
+            <option value="512">512</option>
+            <option value="1K">1K</option>
+            <option value="2K">2K</option>
+            <option value="4K">4K</option>
+            <option value="8K">8K</option>
+            <option value="16K">16K</option>
+            <option value="32K">32K</option>
+            <option value="64K">64K</option>
+            <option value="128K">128K</option>
+            <option value="256K">256K</option>
+            <option value="512K">512K</option>
+            <option value="1M">1M</option>
+            <option value="2M">2M</option>
+            <option value="4M">4M</option>
+            <option value="8M">8M</option>
+            <option value="16M">16M</option>
+          </select>
         </p>
         <p>
           count=
