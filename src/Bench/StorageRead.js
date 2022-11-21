@@ -3,7 +3,7 @@ import * as utils from "../utils";
 export const StorageRead = () => {
   return (
     <>
-      StorageRead by dd command
+      <h2>StorageRead by dd command</h2>
       <br />
       <form id="bench_dd_read_form">
         <input

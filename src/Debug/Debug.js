@@ -3,7 +3,7 @@ import * as utils from "../utils";
 export const Debug = () => {
   return (
     <>
-      Debug
+      <h2>Debug</h2>
       <p>
         <button onClick={powerOn}>Power ON</button>
         <button onClick={powerOff}>Power OFF</button>

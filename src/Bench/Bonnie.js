@@ -3,7 +3,7 @@ import * as utils from "../utils";
 export const Bonnie = () => {
   return (
     <>
-      Bonnie++ benchmark
+      <h2>Bonnie++ benchmark</h2>
       <br />
       <form id="bench_bonnie_form">
         <input
