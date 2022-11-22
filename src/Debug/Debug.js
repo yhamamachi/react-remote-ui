@@ -1,4 +1,5 @@
 import * as utils from "../utils";
+import { WindowMove } from "../MainWindow2";
 
 export const Debug = () => {
   return (
@@ -17,6 +18,9 @@ export const Debug = () => {
         </button>
       </form>
       <p id="DebugDisplay"></p>
+      <br />
+      <h4>Main window test</h4>
+      <WindowMove />
     </>
   );
 };

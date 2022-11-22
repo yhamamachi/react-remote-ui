@@ -11,7 +11,9 @@ import {
   TileContainer,
   TileProvider,
   useMovePane,
-  useGetLeaf
+  useGetLeaf,
+  useReset,
+  useCallback
   // useGetRootNode,
   // TabBarPropsWithAction,
   // TabsBarConfig
@@ -20,13 +22,25 @@ import { SampleWindow } from "./Window/SampleWindow";
 import { FullscreenWindow } from "./Window/FullscreenWindow";
 import { ClusterWindow } from "./Window/ClusterWindow";
 import { styles, theme } from "./theme";
+import { SideMenu } from "./SideMenu";
 
 /****************************************************
  * Config
  *****************************************************/
-const title = ["Serial", "Wave", "Camera", "Cluster", "App1", "App2", "Sample"];
+export const windowTitle = [
+  "Serial",
+  "Wave",
+  "Camera",
+  "Cluster",
+  "App1",
+  "App2",
+  "Sample"
+];
 export const rootPane: TileBranchSubstance = {
-  children: [{ children: title[0] }, { children: title[1] }]
+  children: [{ children: windowTitle[0] }, { children: windowTitle[1] }]
+};
+export const rootPane2: TileBranchSubstance = {
+  children: [{ children: windowTitle[3] }, { children: windowTitle[4] }]
 };
 
 /****************************************************
@@ -62,6 +76,16 @@ function PaneIcon({ name }: { name: number | string }) {
   );
 }
 
+export const WindowMove = (name, place = [0.99, 0.5]) => {
+  const reset = useReset();
+  console.log("WindowMove is pushed");
+  return (
+    <div>
+      <button onClick={() => reset(rootPane2)}>Test</button>
+    </div>
+  );
+};
+
 /****************************************************
  * Main function
  *****************************************************/
@@ -80,18 +104,27 @@ export function MainWindow2() {
     <TileProvider
       tilePanes={nodeList.map((child, index) => ({
         child: child,
-        name: title[index]
+        name: windowTitle[index]
       }))}
       rootNode={rootPane}
       {...theme({})}
     >
-      <div style={{ width: "99%", height: "99%" }}>
-        <div style={{ display: "flex", marginTop: 6 }}>
-          {nodeList.map((_, index) => (
-            <PaneIcon name={title[index]} key={index} />
-          ))}
+      <div className="flex">
+        <div className="SideMenu">
+          <SideMenu />
         </div>
-        <TileContainer style={{ color: "#fff", width: "99%", height: "99%" }} />
+        <div className="MainWindow">
+          <div style={{ width: "99%", height: "99%" }}>
+            <div style={{ display: "flex", marginTop: 6 }}>
+              {nodeList.map((_, index) => (
+                <PaneIcon name={windowTitle[index]} key={index} />
+              ))}
+            </div>
+            <TileContainer
+              style={{ color: "#fff", width: "99%", height: "99%" }}
+            />
+          </div>
+        </div>
       </div>
     </TileProvider>
   );
