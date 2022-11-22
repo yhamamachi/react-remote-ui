@@ -77,6 +77,7 @@ export const StorageRead = () => {
           Run
         </button>
       </form>
+      <p id="ExpectedCommand"></p>
     </>
   );
 };
@@ -84,30 +85,8 @@ export const StorageRead = () => {
 const RunBenchDDRead = () => {
   const hostname = window.location.hostname;
   const _form_elements = document.forms["bench_dd_read_form"].elements;
-  const query = convertFormElementsToURL(_form_elements);
+  const query = utils.convertFormElementsToURL(_form_elements, "=");
   console.log(query);
   const url = "http://" + hostname + ":8000/command?" + query;
   utils.get_req(url);
-};
-
-const convertFormElementsToURL = (formElements) => {
-  const tmp_array = formElements;
-  let ret_str = "";
-  for (let i = 0; i < tmp_array.length; i++) {
-    console.log(tmp_array[i]);
-    const name = tmp_array[i].name;
-    let value = tmp_array[i].value;
-    // Skip if value is empty
-    if (value === "") {
-      continue;
-    }
-
-    // value != name => name=value is passed
-    // value == name => value is passed
-    if (value !== name) {
-      value = name + "=" + value;
-    }
-    ret_str += i + "=" + value + "&";
-  }
-  return ret_str;
 };
