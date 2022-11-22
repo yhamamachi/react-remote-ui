@@ -6,7 +6,7 @@
  */
 
 import React from "react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import "@szhsin/react-menu/dist/index.css";
 import { Menu, MenuItem, MenuButton, SubMenu } from "@szhsin/react-menu";
 import "./styles.css";
@@ -18,6 +18,7 @@ import { Demo3 } from "./Demo/Demo3.js";
 import { Debug } from "./Debug/Debug.js";
 import { StorageRead } from "./Bench/StorageRead.js";
 import { Bonnie } from "./Bench/Bonnie.js";
+import * as utils from "./utils";
 
 //let menu_num = 0;
 export function SideMenu(props) {
@@ -28,6 +29,12 @@ export function SideMenu(props) {
   const [menu_name, setMenuName] = useState(0);
   const [isVisible, setIsVisible] = useState(1);
   const toggleVisible = () => setIsVisible(1 - isVisible);
+
+  useEffect(() => {
+    // For benchmark command update
+    utils.UpdateExpectedCommand();
+    console.log("useEffect is called");
+  });
 
   /** Make menulist function */
   const MakeSubMenu = ({ MenuListName, MenuList }) => {

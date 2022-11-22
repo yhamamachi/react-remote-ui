@@ -16,7 +16,7 @@ export const Debug = () => {
           Send Command
         </button>
       </form>
-      <p id="display"></p>
+      <p id="DebugDisplay"></p>
     </>
   );
 };
@@ -41,7 +41,7 @@ function displayFormData() {
   const formElmKai = formElm.test_data.value;
   const query = convertFormDataToURL(formElmKai);
   const url = "http://" + hostname + ":8000/command?" + query;
-  const displayElm = document.getElementById("display");
+  const displayElm = document.getElementById("DebugDisplay");
   utils.get_req(url);
   displayElm.innerHTML = url;
 }

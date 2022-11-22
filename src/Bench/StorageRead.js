@@ -5,6 +5,9 @@ export const StorageRead = () => {
     <>
       <h2>StorageRead by dd command</h2>
       <br />
+      <div id="Splitter" style={{ display: "none" }}>
+        {"="}
+      </div>
       <form id="bench_dd_read_form">
         <input
           type="text"
@@ -36,7 +39,11 @@ export const StorageRead = () => {
         />
         <p>
           bs=
-          <select name="bs" size="1">
+          <select
+            name="bs"
+            size="1"
+            onChange={(e) => utils.UpdateExpectedCommand()}
+          >
             <option value="512">512</option>
             <option value="1K">1K</option>
             <option value="2K">2K</option>
@@ -57,7 +64,12 @@ export const StorageRead = () => {
         </p>
         <p>
           count=
-          <input type="number" name="count" defaultValue="512" />
+          <input
+            type="number"
+            name="count"
+            defaultValue="512"
+            onChange={(e) => utils.UpdateExpectedCommand()}
+          />
         </p>
         <input
           type="text"
@@ -77,7 +89,7 @@ export const StorageRead = () => {
           Run
         </button>
       </form>
-      <p id="ExpectedCommand"></p>
+      <div id="ExpectedCommand"></div>
     </>
   );
 };
@@ -85,7 +97,7 @@ export const StorageRead = () => {
 const RunBenchDDRead = () => {
   const hostname = window.location.hostname;
   const _form_elements = document.forms["bench_dd_read_form"].elements;
-  const query = utils.convertFormElementsToURL(_form_elements, "=");
+  const query = utils.convertFormElementsToURL(_form_elements);
   console.log(query);
   const url = "http://" + hostname + ":8000/command?" + query;
   utils.get_req(url);

@@ -83,3 +83,13 @@ p {
   font-size: 14px;
   color: #fff;
 }
+
+#DebugDisplay,
+#ExpectedCommand {
+  width: 300px;
+  height: 20px;
+  cursor: move;
+  font-size: 14px;
+  color: #fff;
+  overflow-wrap: break-word;
+}
