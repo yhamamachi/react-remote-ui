@@ -12,7 +12,7 @@ export const ClusterWindow = () => {
         <form id="cluster_window_form">
           <div>
             edgeIP=
-            <input type="text" name="ipaddr" defaultValue="192.168.0.100" />
+            <input type="text" name="ipaddr" defaultValue="localhost" />
             <input type="text" name="dummy" style={{ display: "none" }} />
             <button type="button" onClick={ClusterReload}>
               Reload
@@ -29,7 +29,7 @@ export const ClusterWindow = () => {
         <object
           id="cluster_obj"
           type="text/html"
-          data={"http://" + hostname + ":8088/cluster?edgeIP=192.168.0.100"}
+          data={"http://" + hostname + ":8088/cluster?edgeIP=localhost"}
           width="1920px"
           height="720px"
           style={{

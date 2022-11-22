@@ -15,6 +15,7 @@ import "./styles.css";
 import { Demo1 } from "./Demo/Demo1.js";
 import { Demo2 } from "./Demo/Demo2.js";
 import { Demo3 } from "./Demo/Demo3.js";
+import { CviiDemo } from "./Demo/CviiDemo.js";
 import { Debug } from "./Debug/Debug.js";
 import { LayoutDebugDefault, LayoutDebugTest } from "./Debug/LayoutDebug.js";
 import { StorageRead } from "./Bench/StorageRead.js";
@@ -23,7 +24,7 @@ import * as utils from "./utils";
 
 //let menu_num = 0;
 export function SideMenu(props) {
-  const Demos = ["Demo1", "Demo2", "Demo3"];
+  const Demos = ["Demo1", "Demo2", "Demo3", "CviiDemo"];
   const Benchmarks = ["StorageRead", "Bonnie"];
   const Debugs = ["Debug", "LayoutDebugTest", "LayoutDebugDefault"];
 
@@ -66,6 +67,9 @@ export function SideMenu(props) {
       break;
     case "Debug":
       item = Debug();
+      break;
+    case "CviiDemo":
+      item = CviiDemo();
       break;
     case "LayoutDebugDefault":
       item = LayoutDebugDefault();

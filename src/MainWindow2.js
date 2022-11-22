@@ -28,6 +28,18 @@ const title = ["Serial", "Wave", "Camera", "Cluster", "App1", "App2", "Sample"];
 export const rootPane: TileBranchSubstance = {
   children: [{ children: title[0] }, { children: title[1] }]
 };
+
+export const rootCviiDemoPane: TileBranchSubstance = {
+  children: [
+    { isRow: true,
+      children: [{ children: title[0] }, { children: title[1], grow: 2 } ] },
+    { 
+      isRow: true,
+      children: [{children: title[3], grow: 2}, {children: title[2]}]
+    }
+  ]
+};
+
 /***************************
  *   ---------------------
  *   |     title[4]      |
@@ -99,6 +111,13 @@ const SetTestPaneHiddenButton = () => {
   )
 }
 
+const SetCviiDemoPaneHiddenButton = () => {
+  const reset = useReset();
+  return (
+    <button id="SetCviiDemoPane" onClick={() => reset(rootCviiDemoPane)}>a</button>
+  )
+}
+
 /****************************************************
  * Main function
  *****************************************************/
@@ -132,6 +151,7 @@ export function MainWindow2() {
       </div>
       <ResetPaneHiddenButton />
       <SetTestPaneHiddenButton />
+      <SetCviiDemoPaneHiddenButton />
     </TileProvider>
   );
 }
