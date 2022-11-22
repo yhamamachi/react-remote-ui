@@ -16,6 +16,7 @@ import { Demo1 } from "./Demo/Demo1.js";
 import { Demo2 } from "./Demo/Demo2.js";
 import { Demo3 } from "./Demo/Demo3.js";
 import { Debug } from "./Debug/Debug.js";
+import { LayoutDebugDefault, LayoutDebugTest } from "./Debug/LayoutDebug.js";
 import { StorageRead } from "./Bench/StorageRead.js";
 import { Bonnie } from "./Bench/Bonnie.js";
 import * as utils from "./utils";
@@ -24,7 +25,7 @@ import * as utils from "./utils";
 export function SideMenu(props) {
   const Demos = ["Demo1", "Demo2", "Demo3"];
   const Benchmarks = ["StorageRead", "Bonnie"];
-  const Debugs = ["Debug"];
+  const Debugs = ["Debug", "LayoutDebugTest", "LayoutDebugDefault"];
 
   const [menu_name, setMenuName] = useState(0);
   const [isVisible, setIsVisible] = useState(1);
@@ -65,6 +66,12 @@ export function SideMenu(props) {
       break;
     case "Debug":
       item = Debug();
+      break;
+    case "LayoutDebugDefault":
+      item = LayoutDebugDefault();
+      break;
+    case "LayoutDebugTest":
+      item = LayoutDebugTest();
       break;
     case "StorageRead":
       item = StorageRead();

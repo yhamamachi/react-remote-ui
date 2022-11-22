@@ -11,8 +11,8 @@ import {
   TileContainer,
   TileProvider,
   useMovePane,
-  useGetLeaf
-  // useGetRootNode,
+  useGetLeaf,
+  useReset,
   // TabBarPropsWithAction,
   // TabsBarConfig
 } from "react-tile-pane";
@@ -27,6 +27,26 @@ import { styles, theme } from "./theme";
 const title = ["Serial", "Wave", "Camera", "Cluster", "App1", "App2", "Sample"];
 export const rootPane: TileBranchSubstance = {
   children: [{ children: title[0] }, { children: title[1] }]
+};
+/***************************
+ *   ---------------------
+ *   |     title[4]      |
+ *   |-------------------|
+ *   |     title[5]      |
+ *   |---------+---------|
+ *   |title[0] | title[1]|
+ *   |         |         |
+ *   --------------------|
+ ***************************/
+export const rootPaneTest: TileBranchSubstance = {
+  children: [
+    { children: [{ children: title[4] }, { children: title[5] } ] },
+    { 
+      isRow: true,
+      grow: 1,
+      children: [{children: title[0]}, {children: title[3]}]
+    }
+  ]
 };
 
 /****************************************************
@@ -63,6 +83,23 @@ function PaneIcon({ name }: { name: number | string }) {
 }
 
 /****************************************************
+ * Layout set buttons
+ *****************************************************/
+ const ResetPaneHiddenButton = () => {
+  const reset = useReset();
+  return (
+    <button id="ResetPane" onClick={() => reset(rootPane)}>a</button>
+  )
+}
+
+const SetTestPaneHiddenButton = () => {
+  const reset = useReset();
+  return (
+    <button id="SetTestPane" onClick={() => reset(rootPaneTest)}>a</button>
+  )
+}
+
+/****************************************************
  * Main function
  *****************************************************/
 export function MainWindow2() {
@@ -93,6 +130,8 @@ export function MainWindow2() {
         </div>
         <TileContainer style={{ color: "#fff", width: "99%", height: "99%" }} />
       </div>
+      <ResetPaneHiddenButton />
+      <SetTestPaneHiddenButton />
     </TileProvider>
   );
 }
