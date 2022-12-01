@@ -20,12 +20,13 @@ import { Debug } from "./Debug/Debug.js";
 import { LayoutDebugDefault, LayoutDebugTest } from "./Debug/LayoutDebug.js";
 import { StorageRead } from "./Bench/StorageRead.js";
 import { Bonnie } from "./Bench/Bonnie.js";
+import { SimpleCommand } from "./Bench/SimpleCommand.js";
 import * as utils from "./utils";
 
 //let menu_num = 0;
 export function SideMenu(props) {
   const Demos = ["Demo1", "Demo2", "Demo3", "CviiDemo"];
-  const Benchmarks = ["StorageRead", "Bonnie"];
+  const Benchmarks = ["StorageRead", "Bonnie", "UnixBench"];
   const Debugs = ["Debug", "LayoutDebugTest", "LayoutDebugDefault"];
 
   const [menu_name, setMenuName] = useState(0);
@@ -83,7 +84,10 @@ export function SideMenu(props) {
     case "Bonnie":
       item = Bonnie();
       break;
-    default:
+    case "UnixBench":
+      item = SimpleCommand("UnixBench", "~/run_unixbench.sh");
+      break;
+      default:
       // item = "Please select Demo/Benchmark";
       item = "dummy";
   }
